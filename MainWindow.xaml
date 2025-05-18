@@ -1,0 +1,31 @@
+﻿<Window x:Class="GlobaWBNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GlobaWBNew"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="350" Width="450">
+    <Grid Background="#FFE8E8E8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="85"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" Margin="5" Padding="10" Background="White" CornerRadius="100,20,100,20" >
+            <StackPanel>
+                <TextBlock FontSize="22" FontWeight="Bold" HorizontalAlignment="Right">Авторизация</TextBlock>
+                <Label Margin="17 0 0 0">Login:</Label>
+                <TextBox x:Name="loginBox" Width="200" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Margin="17 0 0 0">Password:</Label>
+                <TextBox x:Name="passwordBox" Width="200" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                <Button Width="70" Height="30" Margin="0 20" BorderBrush="White" FontSize="14" FontWeight="DemiBold" Foreground="#FFEAEAEA" Background="#FF612AFF" Command="{Binding GetAuth}" IsDefault="True" >Auth</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
